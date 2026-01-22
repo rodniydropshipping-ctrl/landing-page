@@ -1,0 +1,320 @@
+* { box-sizing: border-box; }
+body, html {
+  margin: 0; padding: 0;
+  width: 100%; direction: rtl;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* לוגו חתוך וגדול */
+.main-nav {
+  background: #ff7900;
+  width: 100%;
+  height: 120px; /* גובה הפס */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* חותך את מה שיוצא מהפס */
+}
+.logo-wrapper {
+  height: 170px; /* גדול יותר מהפס כדי שנוכל לחתוך קצוות */
+  display: flex;
+  align-items: center;
+}
+.header-logo {
+  height: 100%;
+  width: auto;
+  object-fit: cover; /* חיתוך הקצוות */
+  transform: scale(1.4); /* הגדלה נוספת */
+}
+
+/* Hero - תמונת מזגן */
+.hero-section {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://i.imgur.com/AN6QMHE.jpg') no-repeat center center;
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+.hero-overlay h1 { font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+.btn-orange {
+  display: inline-block;
+  background: #ff7900;
+  color: white;
+  padding: 15px 45px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-top: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* שירותים */
+.services { padding: 50px 20px; text-align: center; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
+.card {
+  height: 250px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.inner { background: rgba(0,0,0,0.7); width: 100%; color: white; padding: 15px; }
+
+/* אנימציה אינסופית לביקורות */
+.marquee { overflow: hidden; background: #f9f9f9; padding: 40px 0; white-space: nowrap; }
+.track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); } /* זז חצי דרך כי הסט משוכפל */
+}
+.rev {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  min-width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+  white-space: normal;
+}
+.stars { color: #ffcc00; font-size: 20px; }
+
+/* דף קשר */
+.contact-footer { padding: 60px 20px; background: #fff5ed; text-align: center; }
+.contact-card { max-width: 450px; margin: 0 auto; }
+input { width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ddd; }
+button { width: 100%; background: #ff7900; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1.1rem; }
+.footer-call { display: block; margin-top: 30px; font-size: 1.8rem; color: #ff7900; text-decoration: none; font-weight: bold; }
+
+.whatsapp { position: fixed; bottom: 20px; left: 20px; width: 60px; }
+
+/* הוסף או עדכן את זה בתיבת ה-CSS */
+.main-logo {
+  height: 60px; /* שנה את הגובה לפי הטעם שלך */
+  width: auto;
+  display: block;
+}
+
+.logo-container {
+  padding: 10px;
+}
+/* עיצוב אזור היתרונות */
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* תמיכה במובייל */
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  direction: rtl;
+  font-family: sans-serif;
+}
+
+.feature-item {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  text-align: center;
+  margin: 20px;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* אפקט ריחוף מעל היתרונות */
+.feature-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.feature-item .icon {
+  font-size: 50px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.feature-item h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.feature-item p {
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* התאמה למסכים קטנים (טלפונים) */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* איפוס רווחים כללי - תוסיף את זה בראש ה-CSS */
+/* איפוס בסיסי וביטול רווחים לבנים בין סקשנים */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden; /* מונע גלילה לצדדים בגלל הקרוסלה */
+  background-color: #fff;
+}
+
+/* תיקון רווחים בין הסקשנים */
+/* ביטול רווחים לבנים בין כל החלקים בדף */
+/* ביטול רווחים בין הסקשנים */
+section {
+  margin: 0 !important;
+  padding: 60px 0; /* הורדנו פדינג צדדי כדי שלא יהיה רווח לבן בקצוות */
+  width: 100%;
+  display: block;
+}
+
+/* --- פתרון לקרוסלה אינסופית ללא קפיצות --- */
+.logo-carousel {
+  padding: 40px 0;
+  background: #fff;
+  overflow: hidden;
+  width: 100%;
+  direction: ltr; /* מחייב את הקרוסלה לעבוד משמאל לימין למניעת רווחים */
+}
+
+.logos-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.logos-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLinear 20s linear infinite;
+}
+
+.logos-track img {
+  height: 50px;
+  width: 180px; /* רווח קבוע לכל תמונה */
+  padding: 0 40px; /* ריווח פנימי במקום מרג'ין */
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+/* האנימציה - הפעם עם ערך שלילי מוחלט */
+@keyframes scrollLinear {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* הזזה בדיוק של חצי מהרוחב הכולל */
+    transform: translateX(-50%);
+  }
+}
+
+/* ביטול רווחים לבנים בין סקשנים - לוודא שזה מופיע */
+section {
+  margin: 0 !important;
+  display: block;
+  width: 100%;
+}
+
+/* --- תיקון רווחים בביקורות --- */
+.testimonials {
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.testimonial-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 40px auto 0 auto; /* ממורכז ללא רווחים מיותרים */
+}
+
+.testi-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  flex: 1;
+  min-width: 300px;
+  direction: rtl;
+}
+/* המצב שבו השירותים נעלמים */
+.services {
+  padding: 80px 20px;
+  background-color: #f4f7f6;
+  text-align: center;
+  direction: rtl;
+}
+
+.service-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-item {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-image {
+  width: 100%;
+  height: 250px; /* גובה אחיד לתמונות */
+  object-fit: cover; /* מוודא שהתמונה לא תימתח */
+}
+
+.service-content {
+  padding: 20px;
+}
+
+/* הגדרות האנימציה שחוזרת בגלילה */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* איפוס כללי כדי למנוע רווחים מיותרים */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* וודא שהקונטיינר של הלוגו (הבאנר הכתום) לא מייצר רווח */
+
+
+  
